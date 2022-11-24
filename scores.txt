@@ -1,0 +1,6 @@
+Petr;Sveto;Matus;Matej
+Sveto;Petr;Matus;Matej
+Sveto;Matej;Petr;Matus
+Matus;Petr;Martin;Matej
+Matus;Sveto;Petr;Matej
+Sveto;Matus;Petr;Matej
