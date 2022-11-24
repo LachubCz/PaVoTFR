@@ -21,11 +21,14 @@ class Person(object):
 
 
 class Match(object):
-    def __init__(self, winning_defender, winning_attacker, losing_defender, losing_attacker):
+    def __init__(self, winning_defender, winning_attacker, losing_defender, losing_attacker, round=None, crawling=False):
         self.winning_defender = winning_defender
         self.winning_attacker = winning_attacker
         self.losing_defender = losing_defender
         self.losing_attacker = losing_attacker
+
+        self.round = round
+        self.crawling = crawling
 
     def get_position(self, name):
         if name == self.winning_defender:
@@ -45,7 +48,7 @@ def process_matches(matches):
 
     all_persons = []
     for match in matches:
-        winning_defender, winning_attacker, losing_defender, losing_attacker = match.split(';')
+        _, winning_defender, winning_attacker, losing_defender, losing_attacker, _ = match.split(';')
         all_persons.append(winning_defender)
         all_persons.append(winning_attacker)
         all_persons.append(losing_defender)
@@ -56,8 +59,8 @@ def process_matches(matches):
         league.persons[person] = Person(person)
 
     for match in matches:
-        winning_defender, winning_attacker, losing_defender, losing_attacker = match.split(';')
-        match = Match(winning_defender, winning_attacker, losing_defender, losing_attacker)
+        round, winning_defender, winning_attacker, losing_defender, losing_attacker, crawling = match.split(';')
+        match = Match(winning_defender, winning_attacker, losing_defender, losing_attacker, int(round), bool(crawling))
         for player in [winning_defender, winning_attacker, losing_defender, losing_attacker]:
             league.persons[player].matches.append(match)
 
