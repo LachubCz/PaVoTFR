@@ -10,7 +10,7 @@
 002;Petr;Sveto;Matus;Miso;0
 002;Matej;Sveto;Miso;Matus;0
 002;Matus;Matej;Miso;Petr;0
-002;Matus;Martin;Petr;Sveto;1
+002;Matus;Martin;Petr;Sveto;0
 002;Matej;Martin;Miso;Sveto;0
 002;Petr;Matus;Miso;Martin;0
 002;Matus;Sveto;Matej;Petr;0
